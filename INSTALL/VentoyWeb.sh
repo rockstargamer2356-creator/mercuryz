@@ -33,9 +33,10 @@ else
     TOOLDIR=i386
 fi
 
+SCRIPT_DIR=$(dirname "$0")
 if [ ! -f ./tool/$TOOLDIR/V2DServer ]; then
-    if [ -f ${0%VentoyWeb.sh}/tool/$TOOLDIR/V2DServer ]; then
-        cd ${0%VentoyWeb.sh}
+    if [ -f "$SCRIPT_DIR/tool/$TOOLDIR/V2DServer" ]; then
+        cd "$SCRIPT_DIR"
     fi
 fi
 

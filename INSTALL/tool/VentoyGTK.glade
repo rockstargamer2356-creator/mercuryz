@@ -205,11 +205,11 @@
   <object class="GtkWindow" id="window">
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
-    <property name="title" translatable="yes">Ventoy2Disk</property>
+    <property name="title" translatable="yes">MERCURYZ (based on Ventoy)</property>
     <property name="modal">False</property>
     <property name="window_position">center</property>
     <property name="default_width">480</property>
-    <property name="default_height">365</property>
+    <property name="default_height">420</property>
     <child>
       <object class="GtkFixed" id="fixed_main">
         <property name="visible">True</property>
@@ -281,7 +281,7 @@
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="menu_item_clear">
-                        <property name="label">Clear Ventoy</property>
+                        <property name="label">Clear MERCURYZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>                        
@@ -316,6 +316,45 @@
               </object>
             </child>
           </object>
+        </child>
+        <child>
+          <object class="GtkFixed" id="fixed_header">
+            <property name="width_request">460</property>
+            <property name="height_request">86</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkImage" id="mercuryz_logo_img">
+                <property name="width_request">260</property>
+                <property name="height_request">65</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="mercuryz_logo_sub">
+                <property name="width_request">460</property>
+                <property name="height_request">18</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="no">&lt;span size="small" weight="bold" foreground="#94a3b8"&gt;CYBERPUNK MULTIBOOT • [ ONLINE // SECURE BOOT READY ]&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">0.5</property>
+              </object>
+              <packing>
+                <property name="x">0</property>
+                <property name="y">66</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">34</property>
+          </packing>
         </child>
         <child>
           <object class="GtkFrame" id="frame_device">
@@ -365,7 +404,7 @@
           </object>
           <packing>
             <property name="x">10</property>
-            <property name="y">40</property>
+            <property name="y">126</property>
           </packing>
         </child>
         <child>
@@ -423,14 +462,14 @@
               <object class="GtkLabel" id="label_local_ver">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes"> Ventoy In Package </property>
+                <property name="label" translatable="yes"> MERCURYZ In Package </property>
                 <property name="use_markup">True</property>
               </object>
             </child>
           </object>
           <packing>
             <property name="x">10</property>
-            <property name="y">132</property>
+            <property name="y">208</property>
           </packing>
         </child>
         <child>
@@ -488,14 +527,14 @@
               <object class="GtkLabel" id="label_device_ver">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes"> Ventoy In Device </property>
+                <property name="label" translatable="yes"> MERCURYZ In Device </property>
                 <property name="use_markup">True</property>
               </object>
             </child>
           </object>
           <packing>
             <property name="x">243</property>
-            <property name="y">132</property>
+            <property name="y">208</property>
           </packing>
         </child>
         <child>
@@ -533,49 +572,35 @@
           </object>
           <packing>
             <property name="x">10</property>
-            <property name="y">215</property>
+            <property name="y">286</property>
           </packing>
         </child>
         <child>
           <object class="GtkButton" id="button_install">
             <property name="label" translatable="yes">Install</property>
-            <property name="width_request">100</property>
-            <property name="height_request">40</property>
+            <property name="width_request">120</property>
+            <property name="height_request">42</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>            
             <property name="receives_default">True</property>
           </object>
           <packing>
-            <property name="x">100</property>
-            <property name="y">300</property>
+            <property name="x">95</property>
+            <property name="y">348</property>
           </packing>
         </child>
         <child>
           <object class="GtkButton" id="button_update">
             <property name="label" translatable="yes">Update</property>
-            <property name="width_request">100</property>
-            <property name="height_request">40</property>
+            <property name="width_request">120</property>
+            <property name="height_request">42</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
           </object>
           <packing>
-            <property name="x">280</property>
-            <property name="y">300</property>
-          </packing>
-        </child>
-        
-        <child>
-          <object class="GtkFrame" id="frame_dummy2">
-            <property name="width_request">460</property>
-            <property name="height_request">25</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label_xalign">0</property>           
-          </object>
-          <packing>
-            <property name="x">10</property>
-            <property name="y">345</property>
+            <property name="x">265</property>
+            <property name="y">348</property>
           </packing>
         </child>
         

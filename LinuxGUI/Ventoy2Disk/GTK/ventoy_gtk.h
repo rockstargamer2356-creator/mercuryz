@@ -45,7 +45,7 @@ int ventoy_code_get_percent(void);
 int ventoy_code_get_result(void);
 int msgbox(GtkMessageType type, GtkButtonsType buttons, const char *strid);
 
-#define VTOY_VER_FMT "<span weight='bold' foreground='red' size='xx-large'>%s</span>"
+#define VTOY_VER_FMT "<span weight='heavy' foreground='#00f0ff' size='xx-large'>%s</span>"
 
 #define LANG_LABEL_TEXT(id, str) \
     gtk_label_set_text(BUILDER_ITEM(GtkLabel, id), vtoy_json_get_string_ex(node->pstChild, str))

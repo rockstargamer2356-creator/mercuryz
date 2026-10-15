@@ -4,25 +4,25 @@
 
 print_usage() {
 
-    echo 'Usage:  Ventoy2Disk.sh CMD [ OPTION ] /dev/sdX'
+    echo 'Usage:  Mercuryz2Disk.sh (or Ventoy2Disk.sh) CMD [ OPTION ] /dev/sdX'
     echo '  CMD:'
-    echo '   -i  install Ventoy to sdX (fails if disk already installed with Ventoy)'
-    echo '   -I  force install Ventoy to sdX (no matter if installed or not)'
-    echo '   -u  update Ventoy in sdX'
-    echo '   -l  list Ventoy information in sdX'
+    echo '   -i  install MERCURYZ to sdX (fails if disk already installed with MERCURYZ/Ventoy)'
+    echo '   -I  force install MERCURYZ to sdX (no matter if installed or not)'
+    echo '   -u  update MERCURYZ in sdX'
+    echo '   -l  list MERCURYZ information in sdX'
     echo ''
     echo '  OPTION: (optional)'
     echo '   -r SIZE_MiB preserve some space (MiB) at the bottom of the disk (only for install)'
     echo '   -s/-S       enable/disable secure boot support (default is enabled)'
     echo '   -g          use GPT partition style, default is MBR (only for install)'
-    echo '   -L          Label of the 1st exfat partition (default is Ventoy)'
+    echo '   -L          Label of the 1st partition (default is MERCURYZ)'
     echo '   -n          try non-destructive installation (only for install)'
     echo ''
 }
 
 
 SECUREBOOT="YES"
-VTNEW_LABEL='Ventoy'
+VTNEW_LABEL='MERCURYZ'
 RESERVE_SIZE_MB=0
 while [ -n "$1" ]; do
     if [ "$1" = "-i" ]; then
@@ -253,7 +253,7 @@ if [ "$MODE" = "install" -a -z "$NONDESTRUCTIVE" ]; then
     echo ''
 
     vtwarn "Attention:"
-    vtwarn "You will install Ventoy to $DISK."
+    vtwarn "You will install MERCURYZ (based on Ventoy) to $DISK."
     vtwarn "All the data on the disk $DISK will be lost!!!"
     echo ""
 
@@ -367,7 +367,7 @@ if [ "$MODE" = "install" -a -z "$NONDESTRUCTIVE" ]; then
     fi
 
     echo ""
-    vtinfo "Install Ventoy to $DISK successfully finished."
+    vtinfo "Install MERCURYZ to $DISK successfully finished."
     echo ""
 
 elif [ "$MODE" = "install" -a -n "$NONDESTRUCTIVE" ]; then
@@ -528,11 +528,11 @@ elif [ "$MODE" = "install" -a -n "$NONDESTRUCTIVE" ]; then
     if [ $? -eq 0 ]; then
         sync
         echo ""
-        vtinfo "Ventoy non-destructive installation on $DISK successfully finished."
+        vtinfo "MERCURYZ non-destructive installation on $DISK successfully finished."
         echo ""
     else
         echo ""
-        vterr "Ventoy non-destructive installation on $DISK failed."
+        vterr "MERCURYZ non-destructive installation on $DISK failed."
         echo ""
     fi
     
@@ -635,7 +635,7 @@ else
 
 
     echo ""
-    vtinfo "Update Ventoy on $DISK successfully finished."
+    vtinfo "Update MERCURYZ on $DISK successfully finished."
     echo ""
 
 fi

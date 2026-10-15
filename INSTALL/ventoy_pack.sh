@@ -60,10 +60,18 @@ else
     OPT='-a'
 fi
 
-dos2unix -q ./tool/ventoy_lib.sh
-dos2unix -q ./tool/VentoyWorker.sh
-dos2unix -q ./tool/VentoyGTK.glade
-dos2unix -q ./tool/distro_gui_type.json
+d2u() {
+    if command -v dos2unix >/dev/null 2>&1; then
+        dos2unix -q "$@"
+    else
+        sed -i 's/\r$//' "$@"
+    fi
+}
+
+d2u ./tool/ventoy_lib.sh
+d2u ./tool/VentoyWorker.sh
+d2u ./tool/VentoyGTK.glade
+d2u ./tool/distro_gui_type.json
 
 . ./tool/ventoy_lib.sh
 
@@ -145,12 +153,17 @@ cd ../../
 #tar menu txt & update menulang.cfg
 cd $tmpmnt/grub/
 
-vtlangtitle=$(grep VTLANG_LANGUAGE_NAME menu/zh_CN.json | awk -F\" '{print $4}')
-echo "menuentry \"zh_CN  -  $vtlangtitle\" --class=menu_lang_item --class=debug_menu_lang --class=F5tool {" >> menulang.cfg
-echo "    vt_load_menu_lang zh_CN"  >> menulang.cfg
+vtlangtitle=$(grep VTLANG_LANGUAGE_NAME menu/th_TH.json | awk -F\" '{print $4}')
+echo "menuentry \"th_TH  -  $vtlangtitle\" --class=menu_lang_item --class=debug_menu_lang --class=F5tool {" >> menulang.cfg
+echo "    vt_load_menu_lang th_TH"  >> menulang.cfg
 echo "}"  >> menulang.cfg
 
-ls -1 menu/ | grep -v 'zh_CN' | sort | while read vtlang; do
+vtlangtitle=$(grep VTLANG_LANGUAGE_NAME menu/en_US.json | awk -F\" '{print $4}')
+echo "menuentry \"en_US  -  $vtlangtitle\" --class=menu_lang_item --class=debug_menu_lang --class=F5tool {" >> menulang.cfg
+echo "    vt_load_menu_lang en_US"  >> menulang.cfg
+echo "}"  >> menulang.cfg
+
+ls -1 menu/ | grep -v -E 'th_TH|en_US' | sort | while read vtlang; do
     vtlangname=${vtlang%.*}
     vtlangtitle=$(grep VTLANG_LANGUAGE_NAME menu/$vtlang | awk -F\" '{print $4}')
     echo "menuentry \"$vtlangname  -  $vtlangtitle\" --class=menu_lang_item --class=debug_menu_lang --class=F5tool {" >> menulang.cfg
@@ -237,8 +250,11 @@ xz --check=crc32 $tmpdir/boot/core.img
 cp $OPT ./tool $tmpdir/
 rm -f $tmpdir/ENROLL_THIS_KEY_IN_MOKMANAGER.cer
 cp $OPT Ventoy2Disk.sh $tmpdir/
+cp $OPT Mercuryz2Disk.sh $tmpdir/
 cp $OPT VentoyWeb.sh $tmpdir/
+cp $OPT MercuryzWeb.sh $tmpdir/
 cp $OPT VentoyPlugson.sh $tmpdir/
+cp $OPT MercuryzPlugson.sh $tmpdir/
 cp $OPT VentoyVlnk.sh $tmpdir/
 cp $OPT VentoyGUI* $tmpdir/
 
@@ -247,14 +263,14 @@ cp $OPT README $tmpdir/
 cp $OPT plugin $tmpdir/
 cp $OPT CreatePersistentImg.sh $tmpdir/
 cp $OPT ExtendPersistentImg.sh $tmpdir/
-dos2unix -q $tmpdir/Ventoy2Disk.sh
-dos2unix -q $tmpdir/VentoyWeb.sh
-dos2unix -q $tmpdir/VentoyPlugson.sh
-dos2unix -q $tmpdir/VentoyVlnk.sh
+d2u $tmpdir/Ventoy2Disk.sh
+d2u $tmpdir/VentoyWeb.sh
+d2u $tmpdir/VentoyPlugson.sh
+d2u $tmpdir/VentoyVlnk.sh
 
 
-dos2unix -q $tmpdir/CreatePersistentImg.sh
-dos2unix -q $tmpdir/ExtendPersistentImg.sh
+d2u $tmpdir/CreatePersistentImg.sh
+d2u $tmpdir/ExtendPersistentImg.sh
 
 cp $OPT ../LinuxGUI/WebUI $tmpdir/
 sed 's/.*SCRIPT_DEL_THIS \(.*\)/\1/g' -i $tmpdir/WebUI/index.html
@@ -307,8 +323,11 @@ done
 find $tmpdir/ -type d -exec chmod 755 "{}" +
 find $tmpdir/ -type f -exec chmod 644 "{}" +
 chmod +x $tmpdir/Ventoy2Disk.sh
+chmod +x $tmpdir/Mercuryz2Disk.sh
 chmod +x $tmpdir/VentoyWeb.sh
+chmod +x $tmpdir/MercuryzWeb.sh
 chmod +x $tmpdir/VentoyPlugson.sh
+chmod +x $tmpdir/MercuryzPlugson.sh
 chmod +x $tmpdir/VentoyVlnk.sh
 chmod +x $tmpdir/VentoyGUI*
 chmod +x $tmpdir/tool/*.sh
@@ -326,6 +345,7 @@ chmod +x $tmpdir/CreatePersistentImg.sh
 chmod +x $tmpdir/ExtendPersistentImg.sh
 
 tar -czvf ventoy-${curver}-linux.tar.gz $tmpdir
+cp -a ventoy-${curver}-linux.tar.gz mercuryz-${curver}-linux.tar.gz
 
 
 

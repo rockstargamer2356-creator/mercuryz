@@ -1,0 +1,99 @@
+{
+    "VTLANG_LANGUAGE_NAME": "ไทย (Thai)",
+    
+    "VTLANG_STR_HOTKEY_LIST": "L:ภาษา  F1:ช่วยเหลือ  F2:เปิดดู  F3:มุมมองรายการ  F4:บูตฮาร์ดดิสก์  F5:เครื่องมือ  F6:เมนูเสริม",
+    "VTLANG_STR_HOTKEY_TREE": "L:ภาษา  F1:ช่วยเหลือ  F2:เปิดดู  F3:มุมมองโครงสร้าง  F4:บูตฮาร์ดดิสก์  F5:เครื่องมือ  F6:เมนูเสริม",
+    "VTLANG_RETURN_PREVIOUS": "กลับสู่เมนูก่อนหน้า [Esc]",
+    "VTLANG_RETURN_PRV_NOESC": "กลับสู่เมนูก่อนหน้า",
+    
+    "VTLANG_MENU_LANG": "เลือกภาษาเมนู (Language)",
+    
+    "VTLANG_LB_SBOOT_WINDOWS": "ค้นหาและบูตเข้า Windows ในเครื่อง",
+    "VTLANG_LB_SBOOT_G4D": "ค้นหาและบูตเข้า Grub4dos",
+    "VTLANG_LB_SBOOT_HDD1": "บูตจากดิสก์เครื่องตัวที่ 1 (HDD 1)",
+    "VTLANG_LB_SBOOT_HDD2": "บูตจากดิสก์เครื่องตัวที่ 2 (HDD 2)",
+    "VTLANG_LB_SBOOT_HDD3": "บูตจากดิสก์เครื่องตัวที่ 3 (HDD 3)",
+    "VTLANG_LB_SBOOT_X64EFI": "ค้นหาและบูตไฟล์ BOOTX64.EFI",
+    "VTLANG_LB_SBOOT_IA32EFI": "ค้นหาและบูตไฟล์ BOOTIA32.EFI",
+    "VTLANG_LB_SBOOT_AA64EFI": "ค้นหาและบูตไฟล์ BOOTAA64.EFI",
+    "VTLANG_LB_SBOOT_XORBOOT": "ค้นหาและบูต xorboot",
+    
+    "VTLANG_FILE_CHKSUM": "ตรวจสอบความสมบูรณ์ไฟล์ (Checksum)",
+    "VTLANG_CHKSUM_MD5_CALC": "คำนวณค่า md5sum",
+    "VTLANG_CHKSUM_SHA1_CALC": "คำนวณค่า sha1sum",
+    "VTLANG_CHKSUM_SHA256_CALC": "คำนวณค่า sha256sum",
+    "VTLANG_CHKSUM_SHA512_CALC": "คำนวณค่า sha512sum",
+    "VTLANG_CHKSUM_MD5_CALC_CHK": "คำนวณและตรวจสอบค่า md5sum",
+    "VTLANG_CHKSUM_SHA1_CALC_CHK": "คำนวณและตรวจสอบค่า sha1sum",
+    "VTLANG_CHKSUM_SHA256_CALC_CHK": "คำนวณและตรวจสอบค่า sha256sum",
+    "VTLANG_CHKSUM_SHA512_CALC_CHK": "คำนวณและตรวจสอบค่า sha512sum",
+    
+    "VTLANG_POWER": "การจัดการพลังงาน (Power)",
+    "VTLANG_POWER_REBOOT": "รีสตาร์ทเครื่อง (Reboot)",
+    "VTLANG_POWER_HALT": "ปิดเครื่อง (Shutdown)",
+    "VTLANG_POWER_BOOT_EFIFW": "รีสตาร์ทเข้า BIOS / EFI Setup",
+    
+    "VTLANG_KEYBRD_LAYOUT": "ผังแป้นพิมพ์ (Keyboard Layout)",
+    "VTLANG_HWINFO": "ข้อมูลฮาร์ดแวร์ระบบ (Hardware Info)",
+    
+    "VTLANG_RESOLUTION_CFG": "ตั้งค่าความละเอียดหน้าจอ (Resolution)",
+    "VTLANG_SCREEN_MODE": "โหมดแสดงผลหน้าจอ (Display Mode)",
+    "VTLANG_SCREEN_TEXT_MODE": "บังคับใช้โหมดข้อความ (Text Mode)",
+    "VTLANG_SCREEN_GUI_MODE": "บังคับใช้โหมดกราฟิก (Graphics Mode)",
+    
+    "VTLANG_THEME_SELECT": "เลือกธีมหน้าจอ (Theme Select)",
+    
+    "VTLANG_UEFI_UTIL": "เครื่องมือยูทิลิตี้ UEFI",
+    "VTLANG_UTIL_SHOW_EFI_DRV": "แสดงไดรเวอร์ EFI ทั้งหมด",
+    "VTLANG_UTIL_FIX_BLINIT_FAIL": "แก้ไขปัญหา Windows BlinitializeLibrary Failure",
+    
+    "VTLANG_JSON_CHK_JSON": "ตรวจสอบการตั้งค่าปลั๊กอิน JSON (ventoy.json)",
+    "VTLANG_JSON_CHK_CONTROL": "ตรวจสอบการตั้งค่า Global Control",
+    "VTLANG_JSON_CHK_THEME": "ตรวจสอบการตั้งค่า Theme",
+    "VTLANG_JSON_CHK_AUTOINS": "ตรวจสอบการตั้งค่า Auto Install",
+    "VTLANG_JSON_CHK_PERSIST": "ตรวจสอบการตั้งค่า Persistence",
+    "VTLANG_JSON_CHK_MENU_ALIAS": "ตรวจสอบการตั้งค่า Menu Alias",
+    "VTLANG_JSON_CHK_MENU_TIP": "ตรวจสอบการตั้งค่า Menu Tip",
+    "VTLANG_JSON_CHK_MENU_CLASS": "ตรวจสอบการตั้งค่า Menu Class",
+    "VTLANG_JSON_CHK_INJECTION": "ตรวจสอบการตั้งค่า Injection",
+    "VTLANG_JSON_CHK_AUTO_MEMDISK": "ตรวจสอบการตั้งค่า Auto Memdisk",
+    "VTLANG_JSON_CHK_IMG_LIST": "ตรวจสอบการตั้งค่า Image List",
+    "VTLANG_JSON_CHK_IMG_BLIST": "ตรวจสอบการตั้งค่า Image Blacklist",
+    "VTLANG_JSON_CHK_CONF_REPLACE": "ตรวจสอบการตั้งค่า Boot Conf Replace",
+    "VTLANG_JSON_CHK_DUD": "ตรวจสอบการตั้งค่า DUD",
+    "VTLANG_JSON_CHK_PASSWORD": "ตรวจสอบการตั้งค่ารหัสผ่าน (Password)",
+    
+    "VTLANG_NORMAL_MODE": "บูตในโหมดปกติ (Normal Mode)",
+    "VTLANG_WIMBOOT_MODE": "บูตในโหมด wimboot",
+    "VTLANG_GRUB2_MODE": "บูตในโหมด grub2",
+    "VTLANG_MEMDISK_MODE": "บูตในโหมด memdisk (โหลดลง RAM)",
+    
+    "VTLANG_RET_TO_LISTVIEW": "กลับสู่มุมมองแบบรายการ (ListView)",
+    "VTLANG_RET_TO_TREEVIEW": "กลับสู่มุมมองแบบโฟลเดอร์ (TreeView)",
+    
+    "VTLANG_NO_AUTOINS_SCRIPT": "บูตโดยไม่ใช้สคริปต์ติดตั้งอัตโนมัติ",
+    "VTLANG_AUTOINS_USE": "บูตพร้อมกับ",
+    
+    "VTLANG_NO_PERSIST": "บูตโดยไม่ใช้ระบบบันทึกข้อมูล (No Persistence)",
+    "VTLANG_PERSIST_USE": "บูตพร้อมระบบบันทึกข้อมูล",
+    
+    "VTLANG_BROWER_RETURN": "ย้อนกลับ",
+    
+    "VTLANG_ENTER_EXIT": "กดปุ่ม Enter เพื่อออก",
+    "VTLANG_ENTER_REBOOT": "กดปุ่ม Enter เพื่อรีสตาร์ท",
+    "VTLANG_ENTER_CONTINUE": "กดปุ่ม Enter เพื่อดำเนินการต่อ",
+    
+    "VTLANG_CTRL_TEMP_SET": "ตั้งค่าควบคุมชั่วคราว (Temporary Settings)",
+    "VTLANG_WIN11_BYPASS_CHECK": "ข้ามการตรวจสอบ CPU / TPM / SecureBoot เมื่อติดตั้ง Windows 11",
+    "VTLANG_WIN11_BYPASS_NRO": "ข้ามการบังคับใช้อีเมล Microsoft Online Account เมื่อติดตั้ง Windows 11",
+    "VTLANG_LINUX_REMOUNT": "เมานต์พาร์ติชัน MERCURYZ อัตโนมัติหลังบูตเข้า Linux",
+    "VTLANG_SECONDARY_BOOT_MENU": "แสดงเมนูบูตสำรอง (Secondary Menu)",    
+    "VTLANG_WIN_UEFI_RES_LOCK": "ล็อกความละเอียดหน้าจอเมื่อบูต UEFI Windows/WinPE",
+    "VTLANG_UEFI_RES_LOCK_NONE": "ไม่ล็อก (None)",
+    "VTLANG_UEFI_RES_LOCK_MAX": "สูงสุด (Highest)",
+    "VTLANG_UEFI_RES_LOCK_1024_768": "ล็อกที่ 1024 x 768",
+    "VTLANG_UEFI_RES_LOCK_BE1024_768": "อย่างน้อย 1024 x 768",
+    
+    "MENU_STR_XXX": ""
+}
+

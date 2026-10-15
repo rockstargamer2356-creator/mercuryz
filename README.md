@@ -1,13 +1,10 @@
 <h1 align="center">
-  <a href=https://www.ventoy.net/>Ventoy</a>
+  MERCURYZ
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/release/ventoy/Ventoy.svg?style=for-the-badge">
-  <img src="https://img.shields.io/github/license/ventoy/Ventoy?style=for-the-badge">
-  <img src="https://img.shields.io/github/stars/ventoy/Ventoy?style=for-the-badge">
-  <img src="https://img.shields.io/github/downloads/ventoy/Ventoy/total.svg?style=for-the-badge">
-  <img src="https://img.shields.io/github/actions/workflow/status/ventoy/Ventoy/ci.yml?label=actions&logo=github&style=for-the-badge">
+  <b>⚡ High-Performance MultiBoot USB System (Based on Ventoy) ⚡</b><br/>
+  <b>🎨 Cyberpunk Mercury Theme &bull; 🇹🇭 เมนูภาษาไทยสมบูรณ์แบบ &bull; 🚀 UEFI & BIOS Support</b>
 </p>
 
 <h4 align="left">

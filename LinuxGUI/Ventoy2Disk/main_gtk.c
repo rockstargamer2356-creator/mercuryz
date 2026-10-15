@@ -204,11 +204,32 @@ int main(int argc, char *argv[])
         set_image_from_pixbuf(pBuilder, "image_secure_dev", pData, len);
     }
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+    GtkCssProvider *pCssProvider = gtk_css_provider_new();
+    if (g_file_test("./tool/VentoyGTK.css", G_FILE_TEST_EXISTS))
+    {
+        gtk_css_provider_load_from_path(pCssProvider, "./tool/VentoyGTK.css", NULL);
+    }
+    gtk_style_context_add_provider_for_screen(
+        gdk_screen_get_default(),
+        GTK_STYLE_PROVIDER(pCssProvider),
+        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+    );
+    g_object_unref(pCssProvider);
+#endif
+
     pWidget = GTK_WIDGET(gtk_builder_get_object(pBuilder, "window"));
     gtk_widget_show_all(pWidget);
 
-    pData = get_window_icon_raw_data(&len);
-    set_window_icon_from_pixbuf(GTK_WINDOW(pWidget), pData, len);
+    if (g_file_test("./tool/mercuryz_icon.png", G_FILE_TEST_EXISTS))
+    {
+        gtk_window_set_icon_from_file(GTK_WINDOW(pWidget), "./tool/mercuryz_icon.png", NULL);
+    }
+    else
+    {
+        pData = get_window_icon_raw_data(&len);
+        set_window_icon_from_pixbuf(GTK_WINDOW(pWidget), pData, len);
+    }
 
     on_init_window(pBuilder);
     g_signal_connect(G_OBJECT(pWidget), "delete_event", G_CALLBACK(on_exit_window), NULL);

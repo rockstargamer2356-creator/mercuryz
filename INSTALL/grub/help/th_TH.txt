@@ -1,0 +1,20 @@
+ L - เลือกภาษาเมนู (Language Select)
+F1 - แสดงคู่มือช่วยเหลือและคีย์ลัด (Help)
+F2 - ค้นหาและบูตไฟล์จากดิสก์เครื่อง (Browse Files)
+F3 - สลับโหมดมุมมอง TreeView (โฟลเดอร์) <-> ListView (รายการ)
+F4 - บูตระบบ Windows หรือ Linux จากฮาร์ดดิสก์ในเครื่อง (Localboot)
+F5 - ยูทิลิตี้และเครื่องมือจัดการระบบ (Utilities & Tools)
+F6 - โหลดเมนู Grub2 กำหนดเอง (Custom Grub2 Menu)
+F7 - สลับระหว่างโหมดกราฟิก (GUI) <-> โหมดข้อความ (Text Mode)
+
+m/Ctrl+m - ตรวจสอบความถูกต้องของไฟล์อิมเมจ (md5/sha1/sha256/sha512)
+d/Ctrl+d - โหมด Memdisk (สำหรับ WinPE / LiveCD ขนาดเล็กโหลดลง RAM)
+w/Ctrl+w - โหมด WIMBOOT (สำหรับไฟล์ Windows / WinPE)
+r/Ctrl+r - โหมด Grub2 (สำหรับ Linux บางดิสโทรที่ต้องการ Grub2)
+i/Ctrl+i - โหมดทำงานร่วมกัน (Compatibility Mode สำหรับแก้ปัญหา)
+u/Ctrl+u - โหลดไดรเวอร์ ISO EFI (สำหรับทดสอบ)
+
+
+
+กดปุ่ม ESC เพื่อย้อนกลับสู่เมนูหลัก ......
+

@@ -1033,6 +1033,58 @@ static void add_accelerator(GtkAccelGroup *agMain, void *widget, const char *sig
     gtk_widget_add_accelerator(GTK_WIDGET(widget), signal, agMain, accel_key, GDK_SHIFT_MASK | GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 }
 
+static gboolean cyberpunk_anim_timer(gpointer user_data)
+{
+    static int anim_step = 0;
+    (void)user_data;
+    anim_step++;
+
+    if (!ventoy_code_is_busy() && g_progress_bar)
+    {
+        gtk_progress_bar_pulse(g_progress_bar);
+    }
+
+    /* Color cycle for MERCURYZ title: vibrant neon cyberpunk palette */
+    static const char *neon_colors[] = {
+        "#00f0ff", "#18f5ff", "#38d8ff", "#60a5fa", 
+        "#818cf8", "#a78bfa", "#c084fc", "#e879f9",
+        "#f43f5e", "#fb7185", "#38bdf8", "#00f0ff"
+    };
+    int color_idx = (anim_step / 2) % 12;
+    const char *color = neon_colors[color_idx];
+
+    static const char *hud_tails[] = {
+        "[ ONLINE // SECURE BOOT READY ]",
+        "[ SCANNING // HIGH-SPEED I/O ]",
+        "[ STANDBY // CYBERPUNK EDITION ]",
+        "[ ACTIVE // MULTIBOOT ENGINE ]"
+    };
+    int tail_idx = (anim_step / 16) % 4;
+
+    GtkLabel *pTitle = BUILDER_ITEM(GtkLabel, "mercuryz_logo_title");
+    GtkLabel *pSub = BUILDER_ITEM(GtkLabel, "mercuryz_logo_sub");
+
+    if (pTitle)
+    {
+        char buf[256];
+        snprintf(buf, sizeof(buf), 
+            "<span size='x-large' weight='heavy' foreground='%s'>⚡ MERCURYZ ⚡</span>", 
+            color);
+        gtk_label_set_markup(pTitle, buf);
+    }
+
+    if (pSub)
+    {
+        char sbuf[256];
+        snprintf(sbuf, sizeof(sbuf), 
+            "<span size='small' weight='bold' foreground='#94a3b8'>CYBERPUNK MULTIBOOT • <span foreground='%s'>%s</span></span>", 
+            color, hud_tails[tail_idx]);
+        gtk_label_set_markup(pSub, sbuf);
+    }
+
+    return G_SOURCE_CONTINUE;
+}
+
 void on_init_window(GtkBuilder *pBuilder)
 {
     GSList *pGroup = NULL;
@@ -1079,8 +1131,8 @@ void on_init_window(GtkBuilder *pBuilder)
     init_part_cfg_window(pBuilder);
 
     /* for gtk2 */
-    gtk_frame_set_shadow_type(BUILDER_ITEM(GtkFrame, "frame_dummy1"), GTK_SHADOW_NONE); 
-    gtk_frame_set_shadow_type(BUILDER_ITEM(GtkFrame, "frame_dummy2"), GTK_SHADOW_NONE); 
+    if (BUILDER_ITEM(GtkFrame, "frame_dummy1")) gtk_frame_set_shadow_type(BUILDER_ITEM(GtkFrame, "frame_dummy1"), GTK_SHADOW_NONE); 
+    if (BUILDER_ITEM(GtkFrame, "frame_dummy2")) gtk_frame_set_shadow_type(BUILDER_ITEM(GtkFrame, "frame_dummy2"), GTK_SHADOW_NONE); 
 
     /* join group */
     pGroup = gtk_radio_menu_item_get_group((GtkRadioMenuItem *)g_menu_item_mbr);
@@ -1096,6 +1148,12 @@ void on_init_window(GtkBuilder *pBuilder)
     gtk_check_menu_item_set_active(g_menu_item_show_all, ventoy_code_get_cur_show_all());
 
     load_languages();
+
+    GtkImage *pLogo = BUILDER_ITEM(GtkImage, "mercuryz_logo_img");
+    if (pLogo && g_file_test("./tool/mercuryz_logo.png", G_FILE_TEST_EXISTS))
+    {
+        gtk_image_set_from_file(pLogo, "./tool/mercuryz_logo.png");
+    }
 
     SIGNAL("combobox_devlist", "changed", on_devlist_changed);
     
@@ -1120,6 +1178,8 @@ void on_init_window(GtkBuilder *pBuilder)
     gtk_check_menu_item_set_active(g_menu_item_secure_boot, 1 - g_secure_boot_support);
 
     fill_dev_list(NULL);
+
+    g_timeout_add(100, cyberpunk_anim_timer, NULL);
 
     return;
 }

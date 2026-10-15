@@ -6,7 +6,7 @@
     <meta http-equiv="pragma" content="no-cache">  
     <!-- HTTP 1.0 -->  
     <meta http-equiv="cache-control" content="no-cache">  
-    <title>Ventoy2Disk</title>
+    <title>MERCURYZ (Based on Ventoy)</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -168,6 +168,142 @@
         text-shadow: 0 0 0 #555;
     }
     
+    /* MERCURYZ Cyberpunk Theme */
+    body {
+        background: radial-gradient(circle at 50% 25%, #081226 0%, #030712 100%) !important;
+        color: #e2e8f0 !important;
+    }
+    #vtoy_main_div {
+        background: rgba(10, 18, 34, 0.94) !important;
+        border: 1px solid rgba(0, 240, 255, 0.35) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 240, 255, 0.15) !important;
+        overflow: hidden !important;
+    }
+    .content {
+        background: transparent !important;
+    }
+    .mercuryz-header {
+        text-align: center;
+        padding: 12px 0 8px 0;
+        background: linear-gradient(180deg, rgba(0, 240, 255, 0.12) 0%, rgba(10, 18, 34, 0) 100%);
+        border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    }
+    .mercuryz-title {
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 5px;
+        background: linear-gradient(90deg, #38bdf8, #ffffff, #00f0ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .mercuryz-sub {
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: #94a3b8;
+        font-weight: 600;
+        margin-top: 2px;
+    }
+    .nav-tabs {
+        border-bottom: 1px solid rgba(0, 240, 255, 0.2) !important;
+        margin-bottom: 10px !important;
+    }
+    .nav-tabs > li > a {
+        color: #94a3b8 !important;
+        border: none !important;
+        border-radius: 6px !important;
+        padding: 5px 12px !important;
+        font-size: 13px !important;
+    }
+    .nav-tabs > li > a:hover, .nav-tabs > li.open > a {
+        background: rgba(0, 240, 255, 0.15) !important;
+        color: #00f0ff !important;
+    }
+    .dropdown-menu {
+        background: #0b1528 !important;
+        border: 1px solid rgba(0, 240, 255, 0.3) !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+        border-radius: 8px !important;
+    }
+    .dropdown-menu > li > a {
+        color: #cbd5e1 !important;
+        padding: 8px 16px !important;
+    }
+    .dropdown-menu > li > a:hover {
+        background: rgba(0, 240, 255, 0.15) !important;
+        color: #00f0ff !important;
+    }
+    #vtoy_dev_list {
+        background-color: #060c18 !important;
+        color: #e2e8f0 !important;
+        border: 1px solid rgba(0, 240, 255, 0.3) !important;
+        border-radius: 8px !important;
+        height: 38px !important;
+        font-size: 13px !important;
+    }
+    .box.box-solid {
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        background: rgba(13, 24, 46, 0.8) !important;
+        border: 1px solid rgba(0, 240, 255, 0.25) !important;
+    }
+    .box-header {
+        background: linear-gradient(90deg, #0284c7, #0369a1) !important;
+        color: #ffffff !important;
+        padding: 6px !important;
+    }
+    span.vtoy_ver {
+        color: #00f0ff !important;
+        font-family: 'Courier New', monospace;
+    }
+    span.vtoy_part {
+        color: #94a3b8 !important;
+    }
+    .progress {
+        background: #060c18 !important;
+        border-radius: 10px !important;
+        height: 16px !important;
+        border: 1px solid rgba(0, 240, 255, 0.2) !important;
+        margin-top: 6px !important;
+    }
+    .progress-bar-success {
+        background: linear-gradient(90deg, #00f0ff, #38bdf8, #6366f1) !important;
+    }
+    #VtoyBtnInstall {
+        background: linear-gradient(135deg, #e11d48, #be123c) !important;
+        color: #ffffff !important;
+        border: 1px solid #f43f5e !important;
+        border-radius: 8px !important;
+        height: 40px !important;
+        font-size: 14px !important;
+        letter-spacing: 1px !important;
+        box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4) !important;
+    }
+    #VtoyBtnInstall:hover {
+        background: linear-gradient(135deg, #f43f5e, #e11d48) !important;
+        box-shadow: 0 6px 20px rgba(244, 63, 94, 0.6) !important;
+    }
+    #VtoyBtnUpdate {
+        background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+        color: #ffffff !important;
+        border: 1px solid #38bdf8 !important;
+        border-radius: 8px !important;
+        height: 40px !important;
+        font-size: 14px !important;
+        letter-spacing: 1px !important;
+        box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4) !important;
+    }
+    #VtoyBtnUpdate:hover {
+        background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6) !important;
+    }
+    .modal-content {
+        background: #091322 !important;
+        color: #e2e8f0 !important;
+        border: 1px solid rgba(0, 240, 255, 0.35) !important;
+        border-radius: 12px !important;
+    }
+    
     </style>
 </head>
 
@@ -232,8 +368,12 @@
         
 <!-- Main content -->
 <section class="content" id="vtoy-content">
+<div class="mercuryz-header" style="margin-top:-10px; margin-bottom:12px;">
+    <div class="mercuryz-title">⚡ MERCURYZ ⚡</div>
+    <div class="mercuryz-sub">HIGH SPEED MULTIBOOT USB FLASHER &bull; BASED ON VENTOY</div>
+</div>
 <div >
-    <div class="row" style="margin-top:-10px; width:535px; font-family:courier new; font-weight:bold;align:center;text-align:center;">
+    <div class="row" style="margin-top:0px; width:535px; font-family:courier new; font-weight:bold;align:center;text-align:center;">
         <ul class="nav nav-tabs" style="margin-left:5px;">
           <li class="dropdown">
             <a class="dropdown-toggle noselect" id='vtoy_option' data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">配置选项 <span class="caret"></span></a>
@@ -332,7 +472,7 @@
     
     var vtoy_in_progress = false;
     var vtoy_app_width = 550;
-    var vtoy_app_height = 400;
+    var vtoy_app_height = 470;
     var vtoy_cur_language;
     var vtoy_cur_lang_index = -1;
     var vtoy_client_language;
@@ -344,19 +484,13 @@
 
 
     function sort_language_list() {
-        var tmp;
-        for (var i = 0; i < vtoy_language_data.length; i++) {
-            for (var j = i + 1; j < vtoy_language_data.length; j++) {
-                if (vtoy_language_data[i].name === 'Chinese Simplified (简体中文)') {
-                    break;
-                }
-                else if (vtoy_language_data[j].name === 'Chinese Simplified (简体中文)' || vtoy_language_data[i].name > vtoy_language_data[j].name) {
-                    tmp = vtoy_language_data[i];
-                    vtoy_language_data[i] = vtoy_language_data[j];
-                    vtoy_language_data[j] = tmp;
-                }
-            }
-        }
+        vtoy_language_data.sort(function(a, b) {
+            if (a.name.indexOf('Thai') >= 0) return -1;
+            if (b.name.indexOf('Thai') >= 0) return 1;
+            if (a.name.indexOf('English') >= 0) return -1;
+            if (b.name.indexOf('English') >= 0) return 1;
+            return a.name.localeCompare(b.name);
+        });
     }
     
     function fill_language_list() {
@@ -594,7 +728,7 @@
 
     function MoveMainDivToCenter() {
         $('#vtoy_main_div').css("left", (document.body.clientWidth - 550) / 2);
-        $('#vtoy_main_div').css("top",(document.body.clientHeight - 400) / 2);
+        $('#vtoy_main_div').css("top", Math.max(10, (document.body.clientHeight - 470) / 2));
     }
 
     // disable F5
@@ -1012,8 +1146,8 @@
     
     
     
-    //SCRIPT_DEL_THIS $(document).on("keydown", disableF5);
-    //SCRIPT_DEL_THIS $(document).on("contextmenu",function(e){ return false; });
+$(document).on("keydown", disableF5);
+$(document).on("contextmenu",function(e){ return false; });
 
     $('#refresh_dev_img').click(on_click_refresh_device);
     $('#vtoy_part_align_4kb').prop("checked", true);
@@ -1039,9 +1173,9 @@
     }
     
     if (vtoy_client_language === 'zh-cn') {
-        select_language_by_index(0, 0);
+        select_language_by_name('Chinese Simplified (简体中文)', 0);
     } else {
-        select_language_by_name('English (English)', 0);
+        select_language_by_name('Thai (ไทย)', 0);
     }
     
     on_select_mbr();

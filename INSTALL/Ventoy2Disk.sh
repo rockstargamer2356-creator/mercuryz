@@ -1,8 +1,9 @@
 #!/bin/sh
 
+SCRIPT_DIR=$(dirname "$0")
 if ! [ -f ./tool/ventoy_lib.sh ]; then
-    if [ -f ${0%Ventoy2Disk.sh}/tool/ventoy_lib.sh ]; then
-        cd ${0%Ventoy2Disk.sh}    
+    if [ -f "$SCRIPT_DIR/tool/ventoy_lib.sh" ]; then
+        cd "$SCRIPT_DIR"
     fi
 fi
 
@@ -23,11 +24,11 @@ export PATH="$(pwd)/tool/$TOOLDIR:$PATH"
 
 
 echo ''
-echo '**********************************************'
-echo "      Ventoy: $curver  $TOOLDIR"
-echo "      longpanda admin@ventoy.net"
-echo "      https://www.ventoy.net"
-echo '**********************************************'
+echo '*************************************************'
+echo "      MERCURYZ MultiBoot: $curver  $TOOLDIR"
+echo "      Based on Ventoy | Thai & Multi-Language"
+echo "      Cyberpunk Edition - High Speed Bootloader"
+echo '*************************************************'
 echo ''
 
 
